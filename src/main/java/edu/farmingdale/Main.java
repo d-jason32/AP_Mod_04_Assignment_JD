@@ -28,6 +28,7 @@ public class Main {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+
         // Removes first object
         dataList.remove(0);
 
@@ -86,7 +87,7 @@ public class Main {
                     System.out.println(day.date + " Category: " + "warm");
                 case ("cold"):
                     System.out.println(day.date + " Category: " + "cold");
-            };
+            }
         });
     }
 

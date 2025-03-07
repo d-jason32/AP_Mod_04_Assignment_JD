@@ -2,7 +2,7 @@
 *2. Provide average temperature for a specific month
 *3. Days with temperature above 50.
 *4. Count of Rainy days
-5. Determine weather categories (hot, warm, cold)  (Enhanced switch statement + patern matching)
+*5. Determine weather categories (hot, warm, cold)  (Enhanced switch statement + patern matching)
 6. Generate output (Textblock)
 7. Add Markdown JavaDoc for all methods comments. Markdown support. Include code examples.
 8. Finish README.md.
@@ -18,7 +18,7 @@ streams
 
 * Records
 
-Interfaces
+*Interfaces
 
 *Functional Programming
 
