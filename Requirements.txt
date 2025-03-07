@@ -1,5 +1,5 @@
-1. Parse weather data from csv file (lambdas and streams) + java record
-    - Create day record
+*1. Parse weather data from csv file (lambdas and streams) + java record
+    - Create day record. Done.
 2. Provide average temperature for a specific month
 3. Days with temperature above 50.
 4. Count of Rainy days
@@ -11,13 +11,13 @@
 To use:
 * Enhanced switch statement (determine weather categories)
 
-* Textblocks
+Textblocks
 
 lambdas
 
 streams
 
-Records
+* Records
 
 Interfaces
 
