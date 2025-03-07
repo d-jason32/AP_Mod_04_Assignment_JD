@@ -47,13 +47,34 @@ public class Main {
             dayList.add(newDay);
         });
 
+
+
+        double total = dayList.stream()
+                .mapToDouble(day -> day.temperature)
+                .sum();
+
+        double averageTemp = total / dayList.size();
+
+
+        System.out.println("Average Temp: " + averageTemp);
+
         /**
          *
          */
-        dayList.stream()
+        long daysOver50 = dayList.stream()
                 .filter(day -> day.temperature > 50)
-                .forEach(day -> System.out.println("Over 50 degrees: " + day.date));
+                .count();
+
+        System.out.println("Days over 50 degrees: " + daysOver50);
+
+        long numRainyDays = dayList.stream()
+                .filter(day -> day.precipitation > 0)
+                .count();
+
+        System.out.println("Rainy Days: " + numRainyDays);
     }
+
+
 
 
 
