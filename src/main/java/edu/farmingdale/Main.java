@@ -47,9 +47,12 @@ public class Main {
             dayList.add(newDay);
         });
 
+        /**
+         *
+         */
         dayList.stream()
                 .filter(day -> day.temperature > 50)
-                .forEach(System.out::println);
+                .forEach(day -> System.out.println("Over 50 degrees: " + day.date));
     }
 
 

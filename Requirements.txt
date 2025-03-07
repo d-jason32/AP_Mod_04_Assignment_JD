@@ -1,7 +1,7 @@
 *1. Parse weather data from csv file (lambdas and streams) + java record
     - Create day record. Done.
 2. Provide average temperature for a specific month
-3. Days with temperature above 50.
+*3. Days with temperature above 50.
 4. Count of Rainy days
 5. Determine weather categories (hot, warm, cold)  (Enhanced switch statement + patern matching)
 6. Generate output (Textblock)
