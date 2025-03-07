@@ -72,14 +72,25 @@ public class Main {
                 .count();
 
         System.out.println("Rainy Days: " + numRainyDays);
+
+        dayList.forEach((day)-> {
+            String category = "cold";
+
+            if (day.temperature > 30) {category = "warm";}
+            if (day.temperature > 50) {category = "hot";}
+
+            switch (category){
+                case ("hot"):
+                    System.out.println(day.date + " Category: " + "hot");
+                case ("warm"):
+                    System.out.println(day.date + " Category: " + "warm");
+                case ("cold"):
+                    System.out.println(day.date + " Category: " + "cold");
+            };
+        });
     }
 
-
-
-
-
     record Day(String date, double temperature, int humidity, double precipitation) {}
-
 
 }
 
