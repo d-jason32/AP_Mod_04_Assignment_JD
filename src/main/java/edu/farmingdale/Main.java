@@ -80,14 +80,14 @@ public class Main {
             if (day.temperature > 30) {category = "warm";}
             if (day.temperature > 50) {category = "hot";}
 
-            switch (category){
-                case ("hot"):
-                    System.out.println(day.date + " Category: " + "hot");
-                case ("warm"):
-                    System.out.println(day.date + " Category: " + "warm");
-                case ("cold"):
-                    System.out.println(day.date + " Category: " + "cold");
-            }
+            String s = switch (category){
+                case "hot" -> day.date + " Category: " + "hot";
+                case "warm" -> day.date + " Category: " + "warm";
+                case "cold" -> day.date + " Category: " + "cold";
+                default -> "Error";
+            };
+
+            System.out.println(s);
         });
     }
 
