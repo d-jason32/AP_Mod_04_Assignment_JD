@@ -8,7 +8,9 @@ import java.io.FileReader;
 public class Main {
 
     public static void main(String[] args) {
+        // Generate list from csv file.
         ArrayList<String> readFile = readFile("weatherdata.csv");
+        //
         ArrayList<Day> parsedFile = Day.parseFile(readFile);
 
         int numRainyDays = Day.numRainyDays(parsedFile);
