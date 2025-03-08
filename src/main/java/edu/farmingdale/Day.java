@@ -5,9 +5,8 @@ import java.util.ArrayList;
 /**
  * Represents the **day** of a month that has weather measurements.
  *```java
- *
+ * Day one = new Day("2023-08-02", 54.4, 60, 2.0);
  * ```
- *
  * @author Jason Devaraj
  * @version 0.1
  * @param date the day the weather measurement took place
@@ -18,9 +17,9 @@ import java.util.ArrayList;
 public record Day(String date, double temperature, int humidity, double precipitation) {
 
     /**
-     * Takes a list of csvs and **populates** a new list with a Day's weather measurements.
+     * Takes a list of csv and **populates** a new list with a Day's weather measurements.
      *```java
-     *
+     * ArrayList<Day> new = parseFile(readFile);
      * ```
      * @param readFile the csv list
      * @return An ArrayList that consists of Day records.
@@ -48,7 +47,8 @@ public record Day(String date, double temperature, int humidity, double precipit
     /**
      * Assigns a **category** to a certain day.
      *```java
-     *
+     * ArrayList<String> list = Data.returnCategories([2023-08-01, 59, 60, 1.1]);
+     * System.out.println(list); // Output: 2023-08-01 Category: Hot
      * ```
      * @param dayList a list that contains records of Day measurements
      * @return A list of strings that represent a day and its category.
@@ -74,7 +74,8 @@ public record Day(String date, double temperature, int humidity, double precipit
     /**
      * Determines the number of days in a month that had **rain**.
      *```java
-     *
+     * int x = numRainyDays(dayList);
+     * System.out.println(x); // Outputs: 20
      * ```
      * @param dayList a list that contains records of Day measurements
      * @return An integer that represents the number of rainy days in a month.
@@ -91,7 +92,8 @@ public record Day(String date, double temperature, int humidity, double precipit
     /**
      * Determines the number of days in a month that had a temperature **above 50 degrees**.
      *```java
-     *
+     * int x = daysOver50(dayList);
+     * System.out.println(x); // Outputs: 10
      * ```
      * @param dayList a list that contains records of Day measurements
      * @return An integer that represents the numbers of days in a month that were above 50 degrees.
@@ -108,7 +110,8 @@ public record Day(String date, double temperature, int humidity, double precipit
     /**
      * **Averages** all the temperatures in a month and returns the result.
      *```java
-     *
+     * double x = getAverageTemperature(dayList);
+     * System.out.println(x); // Outputs: 34.2
      * ```
      * @param dayList a list that contains records of Day measurements
      * @return A double that represents the average temperature in a month.
@@ -124,16 +127,22 @@ public record Day(String date, double temperature, int humidity, double precipit
     /**
      * Creates a Java **Text Block** containing all the weather information and returns the result.
      *```java
-     *
+     * String newString = getTextBlock(averageTemp, daysOver50, numRainyDays, categories);
+     * System.out.println(newString);
+     * //Output: Average Temperature of the Month: 32.80
+     * //Number of days over 50 degrees: 12
+     * //Number of rainy days: 22
+     * //Categories list:
+     * //2023-08-01 Category: cold
      * ```
      * @param averageTemp A double that represents the average temperature in a month.
      * @param daysOver50 An integer that represents the numbers of days in a month that were above 50 degrees.
      * @param numRainyDays An integer that represents the number of rainy days in a month.
      * @param categories A list of strings that represent a day and its category.
-     * @return
+     * @return A string that is a text block of all the input data.
      */
     public static String getTextBlock(double averageTemp, long daysOver50, long numRainyDays, ArrayList<String> categories){
-        // Combine elements of the list into a string with each elements
+        // Combine elements of the list into a string with each element
         // separated by a new line.
         String list = String.join("\n", categories);
 

@@ -37,9 +37,9 @@ public class Main {
     /**
      * Takes a file and **separates** each line into a list.
      *```java
-     *
+     * ArrayList<String> list = readFile(fileName);
      * ```
-     * @param fileName The name of the file that is to be turned into an list.
+     * @param fileName The name of the file that is to be turned into a list.
      * @return A list of strings where each string contains each day's data.
      */
     public static ArrayList<String> readFile(String fileName){
