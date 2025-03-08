@@ -29,12 +29,8 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        // Removes first object
         dataList.remove(0);
 
-        /**
-         * Parses each csv line into a Day record.
-         */
         dataList.forEach( (n) -> {
             String[] parts = n.split(",");
 
@@ -57,10 +53,9 @@ public class Main {
         double averageTemp = total / dayList.size();
 
 
-        /**
-         *
-         */
-        long daysOver50 = dayList.stream()
+
+        long daysOver50 =
+                dayList.stream()
                 .filter(day -> day.temperature > 50)
                 .count();
 
@@ -72,16 +67,11 @@ public class Main {
         System.out.println(getTextBlock(averageTemp, daysOver50, numRainyDays));
 
         dayList.forEach((day)-> {
-            String category = "cold";
 
-            if (day.temperature > 30) {category = "warm";}
-            if (day.temperature > 50) {category = "hot";}
-
-            // Enhanced switch statement
-            String s = switch (category){
-                case "hot" -> day.date + " Category: " + "hot";
-                case "warm" -> day.date + " Category: " + "warm";
-                case "cold" -> day.date + " Category: " + "cold";
+            String s = switch (day){
+                case Day d when day.temperature > 50  -> day.date + " Category: " + "hot";
+                case Day d when day.temperature > 30 -> day.date + " Category: " + "warm";
+                case Day d when day.temperature >= 0 -> day.date + " Category: " + "cold";
                 default -> "Error";
             };
 
@@ -89,7 +79,7 @@ public class Main {
         });
     }
 
-    record Day(String date, double temperature, int humidity, double precipitation) {}
+
 
     public static String getTextBlock(double averageTemp, long daysOver50, long numRainyDays){
         return """
@@ -101,3 +91,7 @@ public class Main {
 
 }
 
+// Refactor
+// readme file
+// markdown support in javadoc. Add javadoc comments. // include code examples
+// pattern matching for switch
