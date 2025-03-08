@@ -57,8 +57,6 @@ public class Main {
         double averageTemp = total / dayList.size();
 
 
-        System.out.println("Average Temp: " + averageTemp);
-
         /**
          *
          */
@@ -66,13 +64,12 @@ public class Main {
                 .filter(day -> day.temperature > 50)
                 .count();
 
-        System.out.println("Days over 50 degrees: " + daysOver50);
 
         long numRainyDays = dayList.stream()
                 .filter(day -> day.precipitation > 0)
                 .count();
 
-        System.out.println("Rainy Days: " + numRainyDays);
+        System.out.println(getTextBlock(averageTemp, daysOver50, numRainyDays));
 
         dayList.forEach((day)-> {
             String category = "cold";
@@ -80,6 +77,7 @@ public class Main {
             if (day.temperature > 30) {category = "warm";}
             if (day.temperature > 50) {category = "hot";}
 
+            // Enhanced switch statement
             String s = switch (category){
                 case "hot" -> day.date + " Category: " + "hot";
                 case "warm" -> day.date + " Category: " + "warm";
@@ -92,6 +90,14 @@ public class Main {
     }
 
     record Day(String date, double temperature, int humidity, double precipitation) {}
+
+    public static String getTextBlock(double averageTemp, long daysOver50, long numRainyDays){
+        return """
+                Average Temperature of the Month: %.2f
+                Number of days over 50 degrees: %d
+                Number of rainy days: %d
+               """.formatted(averageTemp, daysOver50, numRainyDays);
+    }
 
 }
 
