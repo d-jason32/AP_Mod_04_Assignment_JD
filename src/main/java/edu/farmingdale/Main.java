@@ -5,10 +5,15 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 /**
- *
+ *  Main class of the program. Initializes and runs the application.
  * @author Jason Devaraj
+ * @version 0.1
  */
 public class Main {
+    /**
+     * The main method of the program.
+     * @param args The command line argument that is passed to the main function when run in the terminal.
+     */
     public static void main(String[] args) {
         // Generate list from csv file.
         ArrayList<String> readFile = readFile("weatherdata.csv");
@@ -30,9 +35,9 @@ public class Main {
     }
 
     /**
-     *
-     * @param fileName
-     * @return
+     * Takes a file and separates each line into a list.
+     * @param fileName The name of the file that is to be turned into an list.
+     * @return A list of strings where each string contains each day's data.
      */
     public static ArrayList<String> readFile(String fileName){
         ArrayList<String> dataList = new ArrayList<>();
@@ -54,6 +59,4 @@ public class Main {
     }
 }
 
-// readme file
-// markdown support in javadoc. Add javadoc comments. // include code examples
 
