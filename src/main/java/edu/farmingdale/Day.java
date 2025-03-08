@@ -3,7 +3,10 @@ package edu.farmingdale;
 import java.util.ArrayList;
 
 /**
- * Represents the day of a month that has weather measurements.
+ * Represents the **day** of a month that has weather measurements.
+ *```java
+ *
+ * ```
  *
  * @author Jason Devaraj
  * @version 0.1
@@ -15,8 +18,10 @@ import java.util.ArrayList;
 public record Day(String date, double temperature, int humidity, double precipitation) {
 
     /**
-     * Takes a list of csvs and populates a new list with a Day's weather measurements.
+     * Takes a list of csvs and **populates** a new list with a Day's weather measurements.
+     *```java
      *
+     * ```
      * @param readFile the csv list
      * @return An ArrayList that consists of Day records.
      */
@@ -41,7 +46,10 @@ public record Day(String date, double temperature, int humidity, double precipit
     }
 
     /**
-     * Assigns a category to a certain day.
+     * Assigns a **category** to a certain day.
+     *```java
+     *
+     * ```
      * @param dayList a list that contains records of Day measurements
      * @return A list of strings that represent a day and its category.
      */
@@ -64,7 +72,10 @@ public record Day(String date, double temperature, int humidity, double precipit
     }
 
     /**
-     * Determines the number of days in a month that had rain.
+     * Determines the number of days in a month that had **rain**.
+     *```java
+     *
+     * ```
      * @param dayList a list that contains records of Day measurements
      * @return An integer that represents the number of rainy days in a month.
      */
@@ -78,7 +89,10 @@ public record Day(String date, double temperature, int humidity, double precipit
     }
 
     /**
-     * Determines the number of days in a month that had a temperature above 50 degrees.
+     * Determines the number of days in a month that had a temperature **above 50 degrees**.
+     *```java
+     *
+     * ```
      * @param dayList a list that contains records of Day measurements
      * @return An integer that represents the numbers of days in a month that were above 50 degrees.
      */
@@ -92,7 +106,10 @@ public record Day(String date, double temperature, int humidity, double precipit
     }
 
     /**
-     * Averages all the temperatures in a month and returns the result.
+     * **Averages** all the temperatures in a month and returns the result.
+     *```java
+     *
+     * ```
      * @param dayList a list that contains records of Day measurements
      * @return A double that represents the average temperature in a month.
      */
@@ -105,7 +122,10 @@ public record Day(String date, double temperature, int humidity, double precipit
     }
 
     /**
-     * Creates a Java Text Block containing all the weather information and returns the result.
+     * Creates a Java **Text Block** containing all the weather information and returns the result.
+     *```java
+     *
+     * ```
      * @param averageTemp A double that represents the average temperature in a month.
      * @param daysOver50 An integer that represents the numbers of days in a month that were above 50 degrees.
      * @param numRainyDays An integer that represents the number of rainy days in a month.

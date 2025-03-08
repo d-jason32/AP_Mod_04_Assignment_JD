@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 /**
- *  Main class of the program. Initializes and runs the application.
+ *  **Main** class of the program. Initializes and runs the application.
  * @author Jason Devaraj
  * @version 0.1
  */
@@ -35,7 +35,10 @@ public class Main {
     }
 
     /**
-     * Takes a file and separates each line into a list.
+     * Takes a file and **separates** each line into a list.
+     *```java
+     *
+     * ```
      * @param fileName The name of the file that is to be turned into an list.
      * @return A list of strings where each string contains each day's data.
      */
